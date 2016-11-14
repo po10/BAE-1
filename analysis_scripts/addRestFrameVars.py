@@ -23,7 +23,7 @@ class addRestFrameVars(module):
     kaonvect = r.TLorentzVector(t.Kplus_PX,t.Kplus_PY,t.Kplus_PZ,t.Kplus_PE)
     Xsvect = kaonvect+missingvect
     mXs = Xsvect.M()
-    mXs_branch = t.Branch('mXs','d','mXs/d')
+    mXs_branch = t.Branch('mXs',AddressOf(s,mXs,'mXs/D'))
     mXs_branch.Fill()
     return True
   
